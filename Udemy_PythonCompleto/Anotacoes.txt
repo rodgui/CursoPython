@@ -1,0 +1,38 @@
+Leitura Web de Jupyter Notebook
+
+https://nbviewer.jupyter.org/github/rtadewald/Python-Completo-UDEMY/tree/master/
+
+Jupyter Notebook Manual: 
+https://jupyter.brynmawr.edu/services/public/dblank/Jupyter%20Notebook%20Users%20Manual.ipynb#4.3.5-Notebook-Internal-Links
+https://en.wikipedia.org/wiki/Wiki#Editing
+
+Git e GitHub
+https://git-scm.com
+https://guides.github.com
+https://try.github.io
+https://docs.github.com/en/github/getting-started-with-github/git-and-github-learning-resources
+
+Python Tutorial
+https://www.w3schools.com/python/ref_string_partition.asp
+
+Pytnon Formatação
+https://pyformat.info
+
+Prática básica:
+
+http://codingbat.com/python
+
+Mais prática matemática (e mais difícil):
+
+https://projecteuler.net/archives
+
+Lista de problemas práticos:
+
+http://www.codeabbey.com/index/task_list
+
+Um SubReddit dedicado a problemas de prática diária:
+
+https://www.reddit.com/r/dailyprogrammer
+
+
+Reforçar estudo: Diferença entre: Lista [], Dicionarios{}, Tupla(), Set{}
