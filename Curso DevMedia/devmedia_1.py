@@ -197,6 +197,7 @@ for i in range(0,len(matriz)):
 ##
 # Funções
 ##
+print("\n" + "-- Funções --" + "\n")
 print ("\nDoc. da função:\n"+fatorial.__doc__)
 
 def fatorial (numero): #função recursiva
@@ -215,6 +216,7 @@ for n in range ( 1, 11 ):
 ##
 # Funções com parametros opcionais
 ##
+print("\n" + "-- Funções com parametros opcionais --" + "\n")
 
 def potencia(base, exp=2):  # função com parâmetro opcional
 
@@ -230,3 +232,20 @@ def potencia(base, exp=2):  # função com parâmetro opcional
 print("Começa aqui!")
 print ("Potencia de 2: ", potencia(2)) # imprime 4
 print ("Potencia de 2 elevado a 8: ", potencia(2,8)) #imprime 256
+
+##
+# Arquivos no Python
+##
+print("\n" + "-- Arquivos --" + "\n")
+print("\n" + "-- Abertura e Criação --" + "\n")
+
+arq=open('./meuarquivo.txt', 'w')
+arq.write('gravando em um arquivo é simples')
+arq.close ()
+
+print("\n" + "-- Leitura --" + "\n")
+arq = open('./meuarquivo.txt') # r é default
+leitura = arq.read(10)
+print(leitura)
+restante=arq.read()
+print(restante)
