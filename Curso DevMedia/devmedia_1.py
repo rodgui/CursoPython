@@ -89,8 +89,8 @@ while i < 10:
   print ("i = ",i)
   i += 1
 
-while True:
-  pass
+#while True:
+#  continue
 
 ##
 # Exceções e Listas
@@ -253,3 +253,54 @@ leitura = arq.read(10)
 print(leitura)
 restante = arq.read()
 print(restante)
+
+##
+# Trabalhando com Strings
+##
+
+nome_1 = "Rodrigo Garcia"
+nome_2 = "Ana Flavia"
+
+print(type(nome_1))
+print(type(nome_2))
+
+## Indice
+nome_1 = "Rodrigo Garcia"
+print(nome_1[0]) # R
+print(nome_1[0:3]) # Rod
+print(nome_1[-2]) # i
+
+## Imutabilidade
+nome = 'Eduardo'
+print(id(nome))
+nome = 'Felipe'
+print(id(nome))
+
+nome_1 = 'Rodrigo'
+nome_2 = 'Ana'
+
+print(len(nome_1)) # 7
+print(len(nome_2)) # 3
+
+##
+# Concatenação de Strings
+##
+
+nome = 'Daniel'
+sobrenome = 'Silva'
+
+nome_completo = nome + ' ' + sobrenome
+print(nome_completo) # Daniel Silva
+
+##
+# Comparação de Strings
+##
+
+nome_1 = 'Eduardo'
+nome_2 = 'Eduardo'
+
+if nome_1 == nome_2:
+  print('iguais')
+else:
+  print('diferentes')
+

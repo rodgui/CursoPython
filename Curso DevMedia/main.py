@@ -1,3 +1,4 @@
+from typing import ClassVar
 from pessoa_juridica import PessoaJuridica
 from pessoa_fisica import PessoaFisica
 
