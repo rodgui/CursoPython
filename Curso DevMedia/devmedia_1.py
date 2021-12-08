@@ -106,63 +106,63 @@ except:
 ##
 print("\n" + "-- Listas --" + "\n")
 lista = [1, 2, 3]
-print ("Tamanho de lista:", len(lista))
-lista[0]=9
+print("Tamanho de lista:", len(lista))
+lista[0] = 9
 print("-----------")
 for i in range(len(lista)):
-  print (lista[i])
+  print(lista[i])
 
 lista = [1, 2, 3]
-print (lista[0])
-print (lista[1])
-print (lista[-1])
-print (lista[-2])
-print (lista[0:2])
-print (lista[:2])
-print (lista[1:])
+print(lista[0])
+print(lista[1])
+print(lista[-1])
+print(lista[-2])
+print(lista[0:2])
+print(lista[:2])
+print(lista[1:])
 
 ##
 # Função Capitalize, Listas e For
 ##
 print("\n" + "-- Capitalize, Listas, For --" + "\n")
-frutas=['laranja','banana','abacaxi']
+frutas = ['laranja', 'banana', 'abacaxi']
 
 frutas.sort()
-print (frutas)
-frutas[0]='framboesa';
+print(frutas)
+frutas[0] = 'framboesa'
 for item in frutas:
-  print (item.capitalize())
+  print(item.capitalize())
 
 ##
 # Função remove()
 ##
 print("\n" + "-- Listas e Remove() --" + "\n")
-convidados = [] #define uma lista vazia
-convidados.append ('Exemplo 1')
-convidados.append ('Exemplo 2')
-convidados.append ('Exemplo 3')
-convidados.append ('Exemplo 4')
-print ("Tenho ", len(convidados)," Convidados")
+convidados = []  # define uma lista vazia
+convidados.append('Exemplo 1')
+convidados.append('Exemplo 2')
+convidados.append('Exemplo 3')
+convidados.append('Exemplo 4')
+print("Tenho ", len(convidados), " Convidados")
 convidados.sort()
-print ("Sao eles:")
-print (convidados)
-print ("O primeiro convidado eh o ",convidados[0])
-convidados.remove("Exemplo 4"); #aqui tiramos o Exemplo 4 da lista
-print ("Agora tenho somente ", len(convidados)," Convidados")
-print ("Sao eles:")
+print("Sao eles:")
+print(convidados)
+print("O primeiro convidado eh o ", convidados[0])
+convidados.remove("Exemplo 4")  # aqui tiramos o Exemplo 4 da lista
+print("Agora tenho somente ", len(convidados), " Convidados")
+print("Sao eles:")
 for convidado in convidados:
-  print (convidado)
+  print(convidado)
 
-## 
+##
 # Tuplas
 #
 print("\n" + "-- Tuplas --" + "\n")
-frutas=('laranja','banana','abacaxi')
+frutas = ('laranja', 'banana', 'abacaxi')
 type(frutas)
-print (frutas)
+print(frutas)
 #frutas[0]='framboesa';
 for item in frutas:
-  print (item.capitalize())
+  print(item.capitalize())
 
 ##
 # Dicionario
@@ -172,35 +172,36 @@ veiculo = {}
 veiculo['marca'] = 'Puma'
 veiculo['modelo'] = 'GTB'
 veiculo['ano'] = 1978
-print (veiculo['marca'])
-dicionario = {"chave":"17,532","chave2": "17,365" }
-print (dicionario ["chave"]) #imprime valor (17,532)
+print(veiculo['marca'])
+dicionario = {"chave": "17,532", "chave2": "17,365"}
+print(dicionario["chave"])  # imprime valor (17,532)
 
 ##
 # Matriz
 ##
 print("\n" + "-- Matriz --" + "\n")
 #Criando uma matriz de 5x3 inicializada com 0
-lin=5
-col=3
-matriz=[]
-for i in range(0,lin):
-  linha=[]
-  for j in range(0,col):
+lin = 5
+col = 3
+matriz = []
+for i in range(0, lin):
+  linha = []
+  for j in range(0, col):
     linha.append(j)
 matriz.append(linha)
 #varrendo a matriz
-for i in range(0,len(matriz)):
-  for j in range(0,len(matriz[0])):
-    print (matriz[i][j])
+for i in range(0, len(matriz)):
+  for j in range(0, len(matriz[0])):
+    print(matriz[i][j])
 
 ##
 # Funções
 ##
 print("\n" + "-- Funções --" + "\n")
-print ("\nDoc. da função:\n"+fatorial.__doc__)
+print("\nDoc. da função:\n"+fatorial.__doc__)
 
-def fatorial (numero): #função recursiva
+
+def fatorial(numero):  # função recursiva
   """
   Funcao recursiva
   As três aspas duplas é a documentação
@@ -208,15 +209,17 @@ def fatorial (numero): #função recursiva
   if numero <= 1:
     return 1
   else:
-    return (numero * fatorial (numero - 1 ))
+    return (numero * fatorial(numero - 1))
 
-for n in range ( 1, 11 ):
-  print ("Fatorial de",n," eh ", fatorial(n))
+
+for n in range(1, 11):
+  print("Fatorial de", n, " eh ", fatorial(n))
 
 ##
 # Funções com parametros opcionais
 ##
 print("\n" + "-- Funções com parametros opcionais --" + "\n")
+
 
 def potencia(base, exp=2):  # função com parâmetro opcional
 
@@ -229,9 +232,10 @@ def potencia(base, exp=2):  # função com parâmetro opcional
       i = i+1
     return pot
 
+
 print("Começa aqui!")
-print ("Potencia de 2: ", potencia(2)) # imprime 4
-print ("Potencia de 2 elevado a 8: ", potencia(2,8)) #imprime 256
+print("Potencia de 2: ", potencia(2))  # imprime 4
+print("Potencia de 2 elevado a 8: ", potencia(2, 8))  # imprime 256
 
 ##
 # Arquivos no Python
@@ -239,13 +243,13 @@ print ("Potencia de 2 elevado a 8: ", potencia(2,8)) #imprime 256
 print("\n" + "-- Arquivos --" + "\n")
 print("\n" + "-- Abertura e Criação --" + "\n")
 
-arq=open('./meuarquivo.txt', 'w')
+arq = open('./meuarquivo.txt', 'w')
 arq.write('gravando em um arquivo é simples')
-arq.close ()
+arq.close()
 
 print("\n" + "-- Leitura --" + "\n")
-arq = open('./meuarquivo.txt') # r é default
+arq = open('./meuarquivo.txt')  # r é default
 leitura = arq.read(10)
 print(leitura)
-restante=arq.read()
+restante = arq.read()
 print(restante)
