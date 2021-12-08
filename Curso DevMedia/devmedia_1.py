@@ -304,3 +304,31 @@ if nome_1 == nome_2:
 else:
   print('diferentes')
 
+if nome_1 is nome_2:
+  print('Iguais')
+else:
+  print('Diferentes')
+
+##
+# Principais metodos de Strings
+##
+
+## Find()
+mensagem = 'string do Python'
+print(mensagem.find('Python')) #10
+print(mensagem.find('Java')) #-1
+
+## Split()
+mensagem = 'Estou aprendendo Python'
+lista_mensagem = mensagem.split(' ') # separado ' ' será usado para criar a lista
+print(type(mensagem)) # str
+print(type(lista_mensagem)) # type 'list'
+print(lista_mensagem) # ['Estou', 'aprendendo', 'Python']
+print(lista_mensagem[1]) # aprendendo
+
+## Upper()
+mensagem = 'Estou aprendendo Python'
+nova_mensagem = mensagem.upper()
+print(nova_mensagem) #ESTOU APRENDENDO PYTHON
+
+## Metodos Lower)
