@@ -1,5 +1,6 @@
 #fonte: https://www.devmedia.com.br/python-tutorial/33274
 #coding: utf-8
+from os import times
 import sys
 
 ##
@@ -331,4 +332,268 @@ mensagem = 'Estou aprendendo Python'
 nova_mensagem = mensagem.upper()
 print(nova_mensagem) #ESTOU APRENDENDO PYTHON
 
-## Metodos Lower)
+## Metodos Lower()
+mensagem = 'eu gosto de Python'
+nova_mensagem = mensagem.lower()
+print(nova_mensagem) # eu gosto de python
+
+##
+# Acentuação no Python
+# Para podermos usar acentuação no Python, devemos definir a codificação utf-8
+##
+nome = 'João da Silva'
+print(nome)
+# Se Python2 -> O código acima irá gerar o seguinte erro: SyntaxError: Non-ASCII character '\xc3' que é gerado devido ao caractere acentuado que usamos na variável nome.
+# -> para corrigir
+# coding: utf-8
+nome = 'João da Silva'
+print(nome)
+
+##
+# Listas
+# Lista é uma coleção de valores indexada e multavel, em que cada valor é identificado por um índice. O primeiro item na lista está no índice 0, o segundo no índice 1 e assim por diante.
+# Para criar uma lista com elementos deve-se usar colchetes e adicionar os itens entre eles separados por vírgula,
+##
+
+# Mostrando indice
+programadores =['Rodrigo','Ana','Miguel']
+print(type(programadores)) # type 'list''
+print(len(programadores)) # 3
+print(programadores[2]) # Miguel
+
+# Mostrando mutabilidade
+programadores =['Rodrigo','Ana','Miguel']
+print(type(programadores)) # type 'list''
+print(len(programadores)) # 3
+print(programadores[1]) # Ana
+programadores[1] = ['Mel']
+print(programadores) # Mel
+
+# Adicionando ao final da lista. Append
+programadores =['Rodrigo','Ana','Miguel']
+print(type(programadores)) # type 'list''
+print(len(programadores)) # 3
+
+programadores.append('Eduardo')
+
+print(len(programadores)) # 4
+print(programadores) # ['Rodrigo', 'Ana', 'Miguel', 'Eduardo']
+
+#Adicionando itens na lista em posição escolhida -> insert()
+programadores =['Rodrigo','Ana','Miguel']
+print(programadores)
+
+programadores.insert(1,'Selma')
+
+print(programadores) # ['Rodrigo', 'Selma', 'Ana', 'Miguel']
+
+#Removendo itens da lista -> remove()
+programadores =['Rodrigo','Ana','Miguel']
+print(programadores)
+
+programadores.remove('Ana')
+print(programadores) # ['Rodrigo', 'Miguel']
+
+# Removendo itens da lista pelo indice -> pop()
+programadores =['Rodrigo','Ana','Miguel']
+print(programadores)
+
+programadores.pop(0)
+print(programadores)# ['Ana', 'Miguel']
+
+# Listas suportam vários tipos de elementros
+aluno = ['Murilo', 19, 1.79] #Nome, idade e altura
+print(type(aluno)) # <class 'list'>
+print(aluno) # ['Murilo', 19, 1.79]
+
+##
+# Tuplas
+# Tupla é uma estrutura de dados semelhante a lista. Porém, ela tem a característica de ser imutável, ou seja, após uma tupla ser criada, ela não pode ser alterada.
+# Exemplos bons seriam os meses do ano, os dias da semana, as estações do ano etc.
+##
+
+times_rj = ('Botafogo','Flamengo','Vasco','Fluminense')
+print(type(times_rj)) #<class 'tuple'>
+print(times_rj) # ('Botafogo', 'Flamengo', 'Vasco', 'Fluminense')
+
+print(times_rj[2]) # Vasco
+
+#Uma observação a ser feita no uso de uma tupla é que se ela tiver um único item, é necessário colocar uma vírgula depois dele, pois caso contrário, o objeto que vamos obter é uma string, porque o valor do item é do tipo string
+
+objeto_string = ('tesoura')
+objeto_tupla = ('tesoura',)
+
+print(type(objeto_string)) #<class 'str'>
+print(type(objeto_tupla)) #<class 'tuple'>
+
+##
+# Dicionários
+# Os dicionários representam coleções de dados que contém na sua estrutura um conjunto de pares chave/valor, nos quais cada chave individual tem um valor associado.
+# Nas listas e tuplas acessamos os dados por meio dos índices. Já nos dicionários, o acesso aos dados é feito por meio da chave associada a eles.
+##
+
+dados_cliente = {
+  'Nome': 'Renato',
+  'Endereco': 'Rua Cruzeiro do Sul',
+  'Telefone': '99999-2211'
+}
+
+print(dados_cliente['Nome']) # Renato
+
+# Adicionando elemento ao dicionario
+dados_cliente = {
+  'Nome': 'Renato',
+  'Endereco': 'Rua Cruzeiro do Sul',
+  'Telefone': '99999-2211'
+}
+
+print(dados_cliente) # {'Nome': 'Renato', 'Endereco': 'Rua Cruzeiro do Sul', 'Telefone': '99999-2211'}
+
+dados_cliente['Idade'] = 40
+
+print(dados_cliente) #{'Nome': 'Renato', 'Endereco': 'Rua Cruzeiro do Sul', 'Telefone': '99999-2211', 'Idade': 40}
+
+# Removendo elemento de um dicionario -> metodo pop()
+dados_cliente = {
+  'Nome': 'Renato',
+  'Endereco': 'Rua Cruzeiro do Sul',
+  'Telefone': '99999-2211'
+}
+
+dados_cliente.pop('Telefone', None) # Temos na chamada do método o parâmetro None, que é passado depois da chave a ser removida. O None serve para que a mensagem de erro KeyError não apareça devido a remoção de uma chave inexistente.
+
+print(dados_cliente) # {'Nome': 'Renato', 'Endereco': 'Rua Cruzeiro do Sul'}
+
+# Removendo elemento do dicionario usando palavra-chave del
+#Também poderíamos usar a palavra-chave del, que remove uma chave e o valor associado a ela no dicionário.
+dados_cliente = {
+  'Nome': 'Renato',
+  'Endereco': 'Rua Cruzeiro do Sul',
+  'Telefone': '99999-2211'
+}
+
+del dados_cliente["Telefone"]
+print(dados_cliente) #{'Nome': 'Renato', 'Endereco': 'Rua Cruzeiro do Sul'}
+
+##
+# Funções para coleções
+##
+# min() e max()
+numeros = [15, 5, 0, 20, 10]
+nomes = ['Caio', 'Alex', 'Renata', 'Patrícia', 'Bruno']
+
+print(min(numeros)) # 0
+print(max(numeros)) # 20
+print(min(nomes)) # Alex
+print(max(nomes)) # Renata
+# sum()
+numeros = [1, 3, 6]
+
+print(sum(numeros)) # 10
+
+#len() -> A função len() é bastante usada em Python para retornar o tamanho de um objeto. Quando usada com coleções, retorna o total de itens que a coleção possui
+paises = ['Argentina', 'Brasil', 'Colômbia', 'Uruguai']
+print(len(paises)) # 4
+
+# type()
+professores = ['Carla', 'Daniel', 'Ingrid', 'Roberto']
+estacoes = ('Primavera', 'Verão', 'Outono', 'Inverno')
+cliente = {
+    'Nome': 'Fábio Garcia',
+    'email' : 'fabio_garcia_9@outlook.com'
+}
+
+print(type(professores)) # list
+print(type(estacoes)) # tuple
+print(type(cliente)) # dict
+
+##
+# Criando Funções
+##
+def hello(meu_nome):
+  print('Olá', meu_nome)
+
+hello('Rodrigo')
+
+def ola(meu_nome,idade):
+  print('Ola',meu_nome,'\nSua idade é: ', idade)
+
+ola('Rodrigo', 21)
+
+
+# Funções com valor de saída
+def calcular_pagamento(qtd_horas, valor_hora):
+  horas = float(qtd_horas)
+  taxa = float(valor_hora)
+  if horas <= 40:
+    salario = horas * taxa
+  else:
+    h_excd = horas - 40
+    salario = 40*taxa+ (h_excd*(1.5*taxa))
+  return salario
+
+str_horas = input('Digite as horas: ')
+str_taxa = input('Digita a taxa: ')
+total_salario = calcular_pagamento(str_horas, str_taxa)
+print('O valor de seus rendimentos é R$: ', total_salario)
+
+# Função com parametros nomeados
+def calculo_imc(peso, altura):
+    print(peso / altura ** 2)
+
+calculo_imc(75, 1.68)
+
+def calculo_imc(peso, altura):
+    print(peso / altura ** 2)
+
+calculo_imc(altura = 1.68, peso = 75)
+
+
+
+##
+# Operando com listas
+##
+
+# Acessando itens
+lista = ['O carro', 'peixe', 123,111]
+print(lista) # ['O carro', 'peixe', 123, 111]
+nova_lista = ['pedra', lista]
+print(nova_lista) #['pedra', ['O carro', 'peixe', 123, 111]]
+
+print(lista[0]) # O carro
+print(lista[2]) # 123
+print(nova_lista[0]) # pedra
+print(nova_lista[1]) # ['O carro', 'peixe', 123, 111]
+print(nova_lista[1][2]) # 123
+
+#Comprimento da lista
+print(len(nova_lista)) #2
+
+#Concatenação e multiplicação
+print(lista+nova_lista) #['O carro', 'peixe', 123, 111, 'pedra', ['O carro', 'peixe', 123, 111]]
+print(lista*3) #['O carro', 'peixe', 123, 111, 'O carro', 'peixe', 123, 111, 'O carro', 'peixe', 123, 111]
+
+#Verificando a existência de itens em uma lista
+tem_peixe = 'peixe' in lista
+print(tem_peixe) # True
+tem_gato = 'gato' in lista
+print(tem_gato) # False
+
+#Valores mínimos, máximos e soma -> min(), max() e sum()
+numeros = [14.55, 67, 89.88, 10, 21.5]
+print(min(numeros)) #10
+print(max(numeros)) #89.88
+print(sum(numeros)) #202.93
+
+#Ordenando e invertendo -> sort() e reverse()
+livros = ['Java', 'SqlServer', 'Delphi', 'Python', 'Android']
+print(livros)
+livros.reverse()
+print(livros)
+livros.sort()
+print(livros)
+
+#Contagem de ocorrencias -> count()
+livros = ['Java', 'SqlServer', 'Delphi', 'Python', 'Android', 'Java']
+print(livros.count('Python'))
+print(livros.count('Java'))
